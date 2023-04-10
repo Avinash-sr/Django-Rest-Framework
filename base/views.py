@@ -62,7 +62,7 @@ class AdvocateDetail(APIView):
         advocate.delete()
         return Response('user was deleted')
 
-
+#let see
 # @api_view(['GET', 'PUT', 'DELETE'])
 # def advocate_detail(request, username):
 #     advocate = Advocate.objects.get(username=username)

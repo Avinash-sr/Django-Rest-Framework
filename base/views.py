@@ -62,7 +62,7 @@ class AdvocateDetail(APIView):
         advocate.delete()
         return Response('user was deleted')
 
-#let see
+#let see  git init | git add . | git commit -m "fj" | git push -u origin main
 # @api_view(['GET', 'PUT', 'DELETE'])
 # def advocate_detail(request, username):
 #     advocate = Advocate.objects.get(username=username)

@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
 from django.db.models import Q #for and or condition
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 @api_view(['GET'])
@@ -14,6 +15,7 @@ def endpoints(request):
     return Response(data)
 
 @api_view(['GET','POST'])
+@permission_classes([IsAuthenticated])
 def advocate_list(request):
     #/advocates/?query=Priyanka
     #icontains == if contains query in username.

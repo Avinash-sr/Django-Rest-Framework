@@ -81,3 +81,9 @@ class AdvocateDetail(APIView):
 #     if request.method == 'DELETE':
 #         advocate.delete()
 #         return Response('user is deleted')
+
+@api_view(['GET'])
+def companies_list(request):
+    companies = Company.objects.all()
+    serializer = CompanySerializer(companies, many=True)
+    return Response(serializer.data)
